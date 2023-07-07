@@ -1,0 +1,82 @@
+﻿@model FeemanagementSystem.Models.FeeStructure
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card mt-3">
+            <div class="card-body">
+                @**@
+
+                <form asp-action="StructureList" asp-controller="FeeStructures" data-ajax="true" data-ajax-method="get" data-ajax-update="#Content">
+                    <div class="d-flex">
+                        <div class="m-3 form-group"> <label> Class:</label></div>
+                        <div class="form-group m-2 w-50">
+                            <select class="form-select" id="mydrp" asp-for="Cid" asp-items="@ViewBag.ClassList"></select>
+                        </div>
+
+                        <div class="form-group ">
+                            <input type="submit" id="btn-submit" value="Search" hidden class="btn btn-primary" />
+
+                        </div>
+
+                        <div class="m-2">                             
+                            <a asp-action="Create" asp-controller="FeeStructures" asp-route-id=""  class="btn btn-dark" data-ajax="false" data-ajax-method="get" data-ajax-complete="GetCreatePage" data-bs-toggle="moda" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus" style="color: #f6f7f9;"></i></a>
+                        </div>
+                      
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12 ">
+        <div class="card m-3 p-2">
+            <div>
+                <h3>FeeStructure List</h3>
+                <hr />
+            </div>
+            <div class="card-body">
+               
+                <div class="table-responsive" id="Content">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#btn-submit").click();     
+        var value = $('#mydrp').val();
+        var param=$('.btn-dark');
+        console.log(param);
+         param.attr('asp-route-id',value);
+        console.log(param);
+        console.log(value);
+
+        $("#mydrp").on('change',()=>{
+            $("#btn-submit").click();
+            var value = $('#mydrp').val();
+            var param = $('.btn-dark');
+            
+            console.log(value);
+
+            console.log(param);
+            param.attr('asp-route-id', value);
+            console.log(param);
+        });
+
+      
+       
+    });
+</script>

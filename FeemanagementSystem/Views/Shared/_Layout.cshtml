@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/stylesheet.css" rel="stylesheet" />
+ 
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+          integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css" />
+    <link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajax-unobtrusive/3.2.6/jquery.unobtrusive-ajax.min.js" integrity="sha512-DedNBWPF0hLGUPNbCYfj8qjlEnNE92Fqn7xd3Sscfu7ipy7Zu33unHdugqRD3c4Vj7/yLv+slqZhMls/4Oc7Zg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>   
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    
+          <style>
+            body{
+                background-color:  rgb(237, 241, 241)!important;
+            }
+            /*.nav-link{
+                margin:0px!important;
+                padding:0px!important;
+                align-content:space-between;
+            }*/
+            table.dataTable{
+                    border-collapse: collapse!important;
+            }
+
+        .previous{
+                background:black;
+                text-decoration:none;
+                color:white;
+                padding:5px;
+                cursor:pointer;
+            }
+            .previous:hover{
+                color:white;
+            }
+            .next{
+            background:blue;
+            text-decoration: none;
+            color: white;
+            padding:5px;
+            cursor:pointer;
+            }
+            .next:hover{
+                color:white;
+            }
+            .current{
+                
+                 color:red;
+                 font-size:20px;
+                 margin:4px;
+            text-decoration: none;
+            }
+           
+                 
+          </style>
+</head>
+<body>
+@if(User.Identity.IsAuthenticated){
+    <main>
+        <header class="top-nav ">
+            <div class=" top-nav-content">
+                <div class="menu-icon btn" id="btn-menu">
+                    <i class="fa-sharp  fa-solid fa-bars"></i>
+                    <!-- <i class="fa-solid fa-square-x"></i> -->
+                </div>
+                <!-- <ul class="ml-auto">
+                    <div class=" user-btn user-prof ">
+                        <i class="fa-regular fa-2x fa-circle-user"></i>
+                        <span>user</span>
+                        <i class="fa-solid fa-1x fa-caret-down"></i>
+                    </div>
+                    <ul class="user-sub-menu user-prof">
+                        <li ><a class="nav-link">logout</a></li>
+                    </ul>
+                </ul>            -->
+            </div>
+        </header>
+        <div class="content-div content">
+            @RenderBody()
+        </div>
+        <aside class="sidebar">
+            <div class="side-nav-icon">
+                    <a asp-action="GetProfile" id="profile-btn"  asp-controller="UploadFiles" data-ajax="true" data-ajax-method="get" data-ajax-update="#pro-imag"> </a>
+                  <a asp-action="Profile" asp-controller="UserLists" id="pro-imag">
+                     
+                  </a>
+                    <div class="">                       
+                        <a class="btn text-white badge" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            Hi, @(User.FindFirst("UserName")?.Value)! <i class="fa-solid fa-angle-down m-2"></i>
+                        </a>
+                        
+                       
+                        <div class="collapse" id="collapseExample">
+                            <div class="card">
+                                <a class="nav-link text-dark" asp-action="OldPassword" asp-controller="UserLists">ChangePassword</a>
+                                <a class="nav-link text-dark" asp-controller="Home" asp-action="Logout">Logout</a>
+                            </div>
+                        </div>
+                      
+                    </div>
+                <hr />
+            </div>
+            <nav>
+                <ul class="Navbar-item">
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-link active border-line"><a asp-action="Index" asp-controller="Admin" class="nav-link">Home</a></li>
+
+                            @*<li class="nav-link border-line "><a href="#home" class="nav-link">Contact</a></li>
+                    <li class="nav-link border-line"><a href="#" class="nav-link">Contact</a></li>*@
+                            <li class="nav-link border-line"><a asp-action="Index" asp-controller="Classes" class="nav-link"><span>Class</span></a></li>
+                            <li class="nav-link border-line "><span><a asp-action="Index" asp-controller="BusInfoes" class="nav-link">BusInfoes</a>
+                                </span></li>                 
+
+
+                            <div class="submenu-catogory border-line ">
+                                <div class="btn-dropdownarrow">
+                                    <a class="nav-link ">
+                                        <span>Document</span>
+                                        <i class="fa-solid fa-1x fa-caret-down"></i>
+                                        <i class="fa-solid fa-square-chevron-up"></i>
+                                    </a>
+                                </div>
+                                <ul class="sub-menu">
+                                    <li class="nav-link nav-link-sub ">
+                                        <a asp-action="Index" asp-controller="DocumentTypes" class="nav-link">
+                                            Category
+                                        </a>
+                                    </li>
+                                    <li class="nav-link nav-link-sub">
+                                        <a asp-action="Index" asp-controller="UploadFiles">Documents</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <li class="nav-link  border-line"><a asp-action="Index" asp-controller="UserLists" class="nav-link">UserList</a></li>
+                            <li class="nav-link border-line" ><a asp-action="Index" asp-controller="Students">Students</a></li>
+                           
+                            <li class="border-line nav-item">
+                                <a class="nav-link" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                                    <div class="d-flex text-center">
+                                        Fee
+                                        <i class="fa-solid fa-angle-down m-2"></i>
+                                    </div>
+                                </a>
+
+                                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                    <div class=" card bg-transparent">
+                                        <a asp-action="Index" asp-controller="FeeHeaders" class="nav-link">FeeHeaders</a>
+                                        <a asp-action="Index" asp-controller="FeeSheets" class="nav-link">Feesheet</a>
+                                        <a asp-action="Index" asp-controller="FeeStructures" class="nav-link">FeeStructure</a>
+                                        <a asp-action="Index" asp-controller="Receipts" class="nav-link">Receipt</a>
+                                    </div>
+                                </div>
+                            </li>
+                             
+                        }else if(User.IsInRole("Receptionist")){
+                            <li class="border-line ">
+                                <a class="btn nav-link" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                                   
+                                    <div class="d-flex">
+                                        Home
+                                        <i class="fa-solid fa-angle-down m-2"></i>
+                                    </div>
+                                </a>
+                              
+                                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                    <div class=" card bg-transparent">
+                                      
+                                         <a asp-action="Index"  asp-controller="Receptions" style="color:black" class="nav-link text-black">ReceptionList</a>
+
+                                        <a asp-action="CancelList" asp-controller="Receptions" style="color:black" class="nav-link text-black">Cancelled Reception</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-link border-line active"><a asp-action="Index" asp-controller="ProgramInfoes" class="nav-link">Programs</a></li>
+                        }else{
+
+                        }
+
+                </ul>
+            </nav>
+        </aside>
+
+    </main>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog" id="modal-dialog-content">
+            </div>
+        </div>
+        <div class="modal fade" id="EditPage" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog" id="Edit-content">
+            </div>
+        </div>
+        
+        <script>
+            
+            GetCreatePage = function (xhr) {
+                document.getElementById('modal-dialog-content').innerHTML = xhr.responseText;
+            }
+            GetEditPage = function (xhr) {
+                document.getElementById('Edit-content').innerHTML = xhr.responseText;
+            }
+
+            EditpagePost = function (xhr) {
+                alert("Class Updated Successfully");
+                location.reload();
+            }
+            
+
+            $(document).ready(function () {
+                $("#data").DataTable();
+            });
+        </script>
+    }
+    <script>
+        //content-show
+        //top-nav-show
+        //show
+        $(document).ready(function () {
+                        
+           
+                $('#profile-btn').trigger('click');
+           
+            // $("#btn-menu").click(function(){
+            //     $(".top-nav").toggleClass("top-nav-show");
+            //     $(".sidebar").toggleClass("show sidebar-shadow");
+
+            // });
+           /* var ul=$('.navbar');
+            ul.each(function()){
+                var li=$(this).find('li');
+                li.click(function () {          
+                ("li").removeClass("active");
+                $(this).addClass("active");
+            });
+            }*/
+            let counter = 0;
+            $("#btn-menu").on("click", function () {
+                if (counter === 0) {
+                    $(this).html(`<i class="fa-solid fa-xmark"></i>`);
+                    $(".top-nav").toggleClass("top-nav-show");
+                    $(".sidebar").toggleClass("show sidebar-shadow");
+                    $(".content-div").toggleClass("content-show");
+                    counter = 1;
+                } else if (counter === 1) {
+                    $(this).html(`<i class="fa-sharp  fa-solid fa-bars"></i>`);
+                    $(".top-nav").toggleClass("top-nav-show");
+                    $(".sidebar").toggleClass("show sidebar-shadow");
+                    $(".content-div").toggleClass("content-show");
+                    counter = 0;
+                }
+            });
+
+            $(".btn-dropdownarrow").on("click", function () {
+                if (counter === 0) {
+                   
+                    $(".sub-menu").slideToggle("sub-menu-show");
+                    counter = 1;
+                } else if (counter === 1) {
+                   
+                    $(".sub-menu").slideToggle("sub-menu-show");
+                    counter = 0;
+                }
+            });
+            $(".user-btn").on("click", function () {
+                if (counter === 0) {
+                    $(this).html(`<i class="fa-regular fa-2x fa-circle-user"></i>
+                                <span>user</span>
+                                <i class="fa-solid fa-1x fa-caret-up"></i>
+                             `);
+                    $(".user-sub-menu").slideToggle("user-sub-menu-show")
+                    counter = 1;
+                } else if (counter === 1) {
+                    $(this).html(`<i class="fa-regular fa-2x fa-circle-user"></i>
+                                <span>user</span>
+                                <i class="fa-solid fa-1x fa-caret-down"></i>
+                            `);
+                    $(".user-sub-menu").slideToggle("user-sub-menu-show")
+                    counter = 0;
+                }
+            });
+        });
+
+    </script>
+
+</body>
+</html>

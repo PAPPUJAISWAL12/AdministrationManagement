@@ -1,0 +1,34 @@
+﻿@model FeemanagementSystem.Models.FeeStructure
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Add New FeeHeader:</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label asp-for="Cid" class="control-label"></label>
+                <select asp-for="Cid" class="form-control" asp-items="ViewBag.Cid"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fid">Fee Tittle:</label>
+                <select asp-for="Fid" asp-items="@ViewBag.feeHeader"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div> 
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <input type="submit" value="Add" class="btn btn-primary" />
+        </div>
+    </div>
+</form>

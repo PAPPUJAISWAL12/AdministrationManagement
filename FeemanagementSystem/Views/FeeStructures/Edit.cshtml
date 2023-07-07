@@ -1,0 +1,71 @@
+﻿@model FeemanagementSystem.Models.FeeStructure
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>FeeStructure</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FsId" />
+            <div class="form-group">
+                <label asp-for="Cid" class="control-label"></label>
+                <select asp-for="Cid" class="form-control" asp-items="ViewBag.Cid"></select>
+                <span asp-validation-for="Cid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fid" class="control-label"></label>
+                <select asp-for="Fid" class="form-control" asp-items="ViewBag.Fid"></select>
+                <span asp-validation-for="Fid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DueDate" class="control-label"></label>
+                <input asp-for="DueDate" class="form-control" />
+                <span asp-validation-for="DueDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EntryUserId" class="control-label"></label>
+                <select asp-for="EntryUserId" class="form-control" asp-items="ViewBag.EntryUserId"></select>
+                <span asp-validation-for="EntryUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EntryTime" class="control-label"></label>
+                <input asp-for="EntryTime" class="form-control" />
+                <span asp-validation-for="EntryTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CancelledDate" class="control-label"></label>
+                <input asp-for="CancelledDate" class="form-control" />
+                <span asp-validation-for="CancelledDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CancelledUserId" class="control-label"></label>
+                <select asp-for="CancelledUserId" class="form-control" asp-items="ViewBag.CancelledUserId"></select>
+                <span asp-validation-for="CancelledUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReasonForCancelled" class="control-label"></label>
+                <input asp-for="ReasonForCancelled" class="form-control" />
+                <span asp-validation-for="ReasonForCancelled" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

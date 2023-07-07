@@ -1,0 +1,115 @@
+﻿@model IEnumerable<FeemanagementSystem.Models.FeeSheet>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row">
+    <div class="col-sm-12 ">
+        <div class="card m-3 p-2">
+            <div>
+                <h3>FeeSheet List</h3>
+                <hr />
+            </div>
+            <div class="card-body">
+                <div>
+                    <a asp-action="Create" class="btn btn-dark" data-ajax="true" data-ajax-method="get" data-ajax-complete="GetCreatePage" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus" style="color: #f6f7f9;"></i></a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered mt-3" align="center" id="data">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Amount)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.DueDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EntryTime)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CancelledDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ReasonForCancelled)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FeeSheetStatus)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CancelledUser)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EntryUser)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FidNavigation)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Std)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="Content">
+
+                            @{
+                                int count = 0;
+                            }
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Amount)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DueDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EntryTime)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CancelledDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ReasonForCancelled)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FeeSheetStatus)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CancelledUser.UserId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EntryUser.UserId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FidNavigation.Fid)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Std.StdId)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.SheetId">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@item.SheetId">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.SheetId">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#data").DataTable();
+    });
+</script>
+
+
+

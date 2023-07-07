@@ -1,0 +1,95 @@
+﻿@model FeemanagementSystem.Models.UploadFileView
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<style>
+    .profile-image{
+        width:100%;
+        height:200px;
+        object-fit:cover;
+        object-position:top;
+    }
+</style>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" id="update-profile">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Change your Profile:</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="UploadId" />
+                    <div class="form-group">
+
+                        <input asp-for="DocId" hidden class="form-control" asp-items="ViewBag.DocId" />
+                        <input asp-for="TypeId" hidden class="form-c" asp-items="ViewBag.TypeId" />
+                    </div>
+                    <div class="form-group">
+                        <img src="~/documentImage/@Model.DocFile" id="myimage-@Model.UploadId" class="profile-image" style="width:100%; height:200px;" />
+                    </div>
+
+                    <div class="form-group">
+
+                        <label asp-for="FileUpload" class="control-label">Profile:</label>
+                        <input asp-for="FileUpload" class="form-control myinput" id="myInputFile-@Model.UploadId" />
+                        <span asp-validation-for="FileUpload" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+          <div class="card p-2">
+                <a asp-action="Slccerti" hidden id="btn-slc" asp-controller="UploadFiles" data-ajax="true" data-ajax-method="get" data-ajax-update="#SlcCerti"> click</a>
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+               <div id="SlcCerti"></div>
+               <input type="submit" value="Update" class="btn btn-primary" />
+            </form>
+          </div>
+        </div>
+        <div class="col-sm-4">
+            
+                <a asp-action="PlushTwo" hidden  id="btn-plustwo" asp-controller="UploadFiles" data-ajax="true" data-ajax-method="get" data-ajax-update="#PlushTwo"> click</a>                
+                    <div id="PlushTwo"></div>                   
+          
+        </div>
+        <div class="col-sm-4">
+           
+                <a asp-action="Citizenship"  id="btn-citizenship" hidden  asp-controller="UploadFiles" data-ajax="true" data-ajax-method="get" data-ajax-update="#Citizenship"> click</a>               
+                <div id="Citizenship"></div>                    
+            
+        </div>
+    </div>
+
+
+<script>
+    $(document).ready(() => {
+        $('#btn-slc').click();
+        $('#btn-plustwo').click();
+        $('#btn-citizenship').click();
+
+        $('#myInputFile-@Model.UploadId').on('change', (e) => {           
+            var file = e.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#myimage-@Model.UploadId').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(file);
+        });
+    });
+
+</script>
+
+

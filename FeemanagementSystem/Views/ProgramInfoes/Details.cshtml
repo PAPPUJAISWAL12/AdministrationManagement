@@ -1,0 +1,90 @@
+﻿@model FeemanagementSystem.Models.ProgramInfo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ProgramInfo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pdescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pdescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Venue)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Venue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StartTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EndTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EndTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EntryDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EntryDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CancelledDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CancelledDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReasonForCancell)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReasonForCancell)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CancelledUser)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CancelledUser.UserId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.User.UserId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Pid">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

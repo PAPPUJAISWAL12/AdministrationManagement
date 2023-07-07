@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Profile";
+}
+<div class="container-fluid mb-5 ">
+    <div class="row">
+        <div class="col-sm-6">
+            <a asp-action="GetProfile" id="btn-profile" hidden asp-controller="UploadFiles" data-ajax="true" data-ajax-method="get" data-ajax-update="#profile-img"></a>
+            <div id="profile-img">
+            </div>
+            <div>
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Hi, @(User.FindFirst("UserName")?.Value)!
+                    </a>
+                    <ul class="dropdown-menu">
+                        <a class="nav-link text-dark" asp-controller="UserLists">ChangePassword</a>
+                        <a class="nav-link text-dark" asp-controller="Home" asp-action="Logout">LogOut</a>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <a asp-action="Create" hidden id="btn-documentUpload" asp-controller="UploadFiles" data-ajax="true" data-ajax-method="get" data-ajax-update="#documentUpload"></a>
+            <div class="mt-5" id="documentUpload">
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-sm-12">
+            <a asp-action="Edit" id="btn-updateProfile" asp-controller="UploadFiles" data-ajax="true" data-ajax-method="get" data-ajax-update="#update-profile" hidden></a>
+            <div id="update-profile"></div>
+
+            <!-- Modal -->
+           
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#btn-profile').click();
+        $('#btn-documentUpload').click();
+        $('#btn-updateProfile').click();
+    });
+</script>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<FeemanagementSystem.Models.UploadFileView>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row">
+    <div class="col-sm-12 ">
+        <div class="card m-3 p-2">
+              <div class="text-center">
+                    <h3>Documents</h3>
+                </div>
+            <div class="card-body">
+                <div>
+                    <a asp-action="Create" class="btn btn-dark" data-ajax="true" data-ajax-method="get" data-ajax-complete="GetCreatePage" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus" style="color: #f6f7f9;"></i></a>
+                </div>
+                <div class="table-overflow">
+                    <table class="table table-bordered mt-3" align="center">
+                        <thead>
+                            <tr>
+                              <th>S.N</th>
+                              <th>Name</th>
+                              <th>Image</th>
+                              <th>Document Type</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Content">
+
+                            @{
+                                int count = 0;
+                            }
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@(++count)</td>
+                                    <td>@item.FullName</td>
+                                    <td>
+                                        <img src="~/documentimage/@item.DocFile" style="width:100px" />
+
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit"  class="m-1" data-ajax="true" data-ajax-method="get" data-ajax-complete="GetEditPage" data-bs-toggle="modal" data-bs-target="#EditPage"><i class="fa-solid fa-pen-to-square" style="color: #266de8;"></i></a>                                                          
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

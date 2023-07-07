@@ -1,0 +1,36 @@
+﻿@model List<StudentView>
+
+@{
+    int count = 0;
+}
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@(++count)</td>
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.StdId" asp-controller="Students" data-ajax="true" data-ajax-method="get" data-ajax-complete="GetEditPage" data-bs-toggle="modal" data-bs-target="#EditPage"><i class="fa-solid fa-pen-to-square" style="color: #266de8;"></i></a>
+            <a asp-action="Delete" asp-route-id="@item.StdId" class="m-2" asp-controller="Students" data-ajax="true" data-ajax-method="get" data-ajax-confirm="Are you sure you want to delete this?" data-ajax-complete="deletePage"><i class="fa-solid fa-trash" style="color: #f82a1b;"></i></a>
+        </td>
+    </tr>
+}
+
+<script>
+    
+</script>

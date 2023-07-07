@@ -1,0 +1,60 @@
+﻿@model List<FeemanagementSystem.Models.FeeStructureView>
+
+
+<table class="table table-bordered mt-3" align="center" id="data">
+    <thead>
+        <tr>
+            <th>S.N.</th>
+            <th>Fee Title</th>
+            <th>
+                Amount
+            </th>
+            <th>
+             DueDate
+            </th>
+            <th>
+               EntryTime
+            </th>
+            <th>Entry By</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int count = 0;
+        }
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@(++count)</td>
+                <td>@item.Title</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DueDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EntryTime)
+                </td>
+                <td>
+                    @item.EntryBy
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.FsId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.FsId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.FsId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(function(){
+          $("#data").DataTable();
+    });
+</script>
+

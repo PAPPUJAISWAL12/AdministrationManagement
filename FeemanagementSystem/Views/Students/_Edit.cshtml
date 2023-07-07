@@ -1,0 +1,47 @@
+﻿@model FeemanagementSystem.Models.StudentView
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Update Student Information:</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <input type="hidden" asp-for="StdId" />
+            <input asp-for="Cid" hidden />
+            <input asp-for="Bid"  hidden/>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserAddress" class="control-label"></label>
+                <input asp-for="UserAddress" class="form-control" />
+                <span asp-validation-for="UserAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEmail" class="control-label"></label>
+                <input asp-for="UserEmail" class="form-control">
+                <span asp-validation-for="UserEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+
+        </div>
+        <div class="modal-footer">          
+            <input type="submit" value="Update" class="btn btn-primary" />
+        </div>
+    </div>
+           
+        </form>
+    

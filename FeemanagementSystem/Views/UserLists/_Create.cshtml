@@ -1,0 +1,63 @@
+﻿@model FeemanagementSystem.Models.UserList
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+        <form asp-action="Create" data-ajax="true" data-ajax-method="Post" data-ajax-complete="UserPost">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Add New User</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserEmail" class="control-label"></label>
+                <input asp-for="UserEmail" class="form-control myinput" />
+                <span asp-validation-for="UserEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Upassword" class="control-label"></label>
+                <input asp-for="Upassword" class="form-control myinput" />
+                <span asp-validation-for="Upassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control myinput" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control myinput" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserAddress" class="control-label"></label>
+                <input asp-for="UserAddress" class="form-control myinput" />
+                <span asp-validation-for="UserAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserRoleType" class="control-label"></label>
+                <select asp-for="UserRoleType" class="form-select" >
+                    <option>Admin</option>
+                    <option>Administrative</option>
+                    <option>Receptionist</option>
+
+                </select>
+                <span asp-validation-for="UserRoleType" class="text-danger"></span>
+            </div>
+
+        </div>
+        <div class="modal-footer">            
+            <input type="submit" value="Add" class="btn btn-primary" />
+        </div>
+    </div>
+
+
+            
+           
+        </form>
+    

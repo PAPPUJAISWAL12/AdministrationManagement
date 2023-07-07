@@ -1,0 +1,69 @@
+﻿@model FeemanagementSystem.Models.FeeSheet
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<form asp-action="Create">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Add New FeeSheet:</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StdId" class="control-label"></label>
+                <select asp-for="StdId" class="form-control" asp-items="ViewBag.StdId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fid" class="control-label"></label>
+                <select asp-for="Fid" class="form-control" asp-items="ViewBag.Fid"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DueDate" class="control-label"></label>
+                <input asp-for="DueDate" class="form-control" />
+                <span asp-validation-for="DueDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EntryUserId" class="control-label"></label>
+                <select asp-for="EntryUserId" class="form-control" asp-items="ViewBag.EntryUserId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="EntryTime" class="control-label"></label>
+                <input asp-for="EntryTime" class="form-control" />
+                <span asp-validation-for="EntryTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CancelledDate" class="control-label"></label>
+                <input asp-for="CancelledDate" class="form-control" />
+                <span asp-validation-for="CancelledDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CancelledUserId" class="control-label"></label>
+                <select asp-for="CancelledUserId" class="form-control" asp-items="ViewBag.CancelledUserId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReasonForCancelled" class="control-label"></label>
+                <input asp-for="ReasonForCancelled" class="form-control" />
+                <span asp-validation-for="ReasonForCancelled" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FeeSheetStatus" class="control-label"></label>
+                <input asp-for="FeeSheetStatus" class="form-control" />
+                <span asp-validation-for="FeeSheetStatus" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <input type="submit" value="Add" class="btn btn-primary" />
+        </div>
+    </div>
+</form>
+

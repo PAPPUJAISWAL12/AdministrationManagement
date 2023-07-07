@@ -1,0 +1,48 @@
+﻿@model FeemanagementSystem.Models.Reception
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<form asp-action="Edit">
+            <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Cancel</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>          
+            <div class="form-group">
+                <input type="hidden" asp-for="Rid" />
+                <input asp-for="PersonName" hidden class="form-control" />
+                <input asp-for="EntryDate" hidden class="form-control" />
+                <input asp-for="EntryTime" hidden class="form-control" />
+                <input asp-for="Purpose" hidden class="form-control" />
+                <input asp-for="PersonAddress" hidden class="form-control" />
+                <input asp-for="Phone" hidden class="form-control" />
+                <input asp-for="UserId" hidden class="form-control" />
+                <input asp-for="FiscalYear" hidden/>
+                
+            </div>
+          
+            <div class="form-group">
+                <label asp-for="ResonForCancell" class="control-label"></label>
+                <input asp-for="ResonForCancell" class="form-control" />
+                <span asp-validation-for="ResonForCancell" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReceptionStatus" class="control-label"></label>
+                <input asp-for="ReceptionStatus" class="form-control" />
+                <span asp-validation-for="ReceptionStatus" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="modal-footer">           
+            <input type="submit" value="Add" class="btn btn-primary" />
+        </div>
+    </div>
+            
+         
+        </form>
+   
+

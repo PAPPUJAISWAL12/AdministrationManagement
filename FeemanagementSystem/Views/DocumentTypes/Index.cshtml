@@ -1,0 +1,47 @@
+﻿@model IEnumerable<FeemanagementSystem.Models.DocumentType>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-sm-12 ">
+        <div class="card m-3 p-2">
+            <div class="card-body">
+
+                <div class="text-center">
+                    <h3>Document Category</h3>
+                </div>
+                <a asp-controller="DocumentTypes" asp-action="Create" data-ajax="true" data-ajax-method="get" data-ajax-complete="GetCreatePage" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-dark"><i class="fa-solid fa-plus" style="color: #f6f7f9;"></i></a>
+                <a asp-action="GetDocumentTypeList" hidden asp-controller="DocumentTypes" id="btnuserList" data-ajax="true" data-ajax-method="get" data-ajax-update="#userdata"></a>
+                <div class="table-overflow" >
+                    <table class="table table-bordered" >
+                        <thead>
+                            <tr>
+                                <th>S.N</th>
+                                <th>Document Type</th>                              
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userdata">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(window).on("load", function () {
+        $("#btnuserList").trigger('click');
+    });
+    deletePage = function (xhr) {
+        $("#btnuserList").click();
+    }
+    UserPost = function (xhr) {
+        alert("Category Added SuccessFully");
+        $("#btnuserList").trigger('click');
+        $('.myinput').val('');
+    }
+</script>

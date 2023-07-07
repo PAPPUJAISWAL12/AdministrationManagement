@@ -1,0 +1,33 @@
+﻿@model FeemanagementSystem.Models.Class
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+        <form asp-action="Edit" data-ajax="true" data-ajax-method="post" data-ajax-complete="EditpagePost">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Update Class</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Cid" />
+                    <div class="form-group">
+                        <label asp-for="Cname" class="control-label"></label>
+                        <input asp-for="Cname" class="form-control" />
+                        <span asp-validation-for="Cname" class="text-danger"></span>
+                    </div>
+           
+
+                </div>
+                <div class="modal-footer">
+           
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </div>         
+        </form>
+   
+

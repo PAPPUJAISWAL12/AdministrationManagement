@@ -1,0 +1,117 @@
+﻿@model IEnumerable<FeemanagementSystem.Models.ProgramInfo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-sm-12 ">
+        <div class="card m-3 p-2">
+            <div class="card-body">
+
+                <div class="text-center">
+                    <h3>Program Infprmation</h3>
+                </div>
+                <a asp-action="Create" asp-controller="ProgramInfoes" data-ajax="true" data-ajax-method="get" data-ajax-complete="GetCreatePage" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-dark"><i class="fa-solid fa-plus" style="color: #f6f7f9;"></i></a>
+                <div class="table-overflow table-responsive">
+                    <table class="table table-bordered mt-3"  id="data" align="center">
+                        <thead>
+                            <tr>
+                                <th>S.N</th>
+
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Pname)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Pdescription)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Venue)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.StartDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.StartTime)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EndDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EndTime)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EntryDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CancelledDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ReasonForCancell)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CancelledUser)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.User)
+                                </th>
+
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Content">
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Pname)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Pdescription)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Venue)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StartDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.StartTime)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EndDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EndTime)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EntryDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CancelledDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ReasonForCancell)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CancelledUser.UserId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.User.UserId)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Pid">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@item.Pid">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Pid">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

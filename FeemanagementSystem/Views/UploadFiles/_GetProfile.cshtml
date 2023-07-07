@@ -1,0 +1,33 @@
+﻿@model FeemanagementSystem.Models.UploadFileView
+<style>
+    .profile {
+        width: 100px;
+        background-color: #fff;
+        height: 100px;
+        position: relative;
+        border-radius: 50%;
+    }
+
+    .error-profile {
+        position: absolute;
+        margin-left:20px;
+    }
+    .profile-err{
+        width: 100px;
+        background-color: #fff;
+        height: 100px;
+        position: relative;
+        border-radius: 50%;
+        margin-left:40px;
+    }
+</style>
+@if(Model==null){
+    <div class="profile-err">
+    <img src=""   />
+      <p class="error-profile">profile</p>
+    </div>
+}else{
+    <img src="~/documentimage/@Model.DocFile" class="profile" data-bs-toggle="modal" data-bs-target="#staticBackdrop" />
+}
+   
+                     

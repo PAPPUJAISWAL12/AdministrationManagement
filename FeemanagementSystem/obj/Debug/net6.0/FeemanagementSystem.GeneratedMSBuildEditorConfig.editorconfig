@@ -1,0 +1,348 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = FeemanagementSystem
+build_property.RootNamespace = FeemanagementSystem
+build_property.ProjectDir = H:\visual studio\FeemanagementSystem\FeemanagementSystem\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = H:\visual studio\FeemanagementSystem\FeemanagementSystem
+build_property._RazorSourceGeneratorDebug = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/BusInfoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzSW5mb2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/BusInfoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzSW5mb2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/BusInfoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzSW5mb2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/BusInfoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzSW5mb2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/BusInfoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQnVzSW5mb2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Classes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Classes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Classes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Classes/_Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3Nlc1xfQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/DocumentTypes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdW1lbnRUeXBlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/DocumentTypes/_Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdW1lbnRUeXBlc1xfQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/DocumentTypes/_Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdW1lbnRUeXBlc1xfRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/DocumentTypes/_GetDocumentTypeList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdW1lbnRUeXBlc1xfR2V0RG9jdW1lbnRUeXBlTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/FeeHeaders/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlSGVhZGVyc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/FeeHeaders/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlSGVhZGVyc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/FeeHeaders/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlSGVhZGVyc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/FeeHeaders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlSGVhZGVyc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/FeeHeaders/_Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlSGVhZGVyc1xfQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/FeeSheets/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlU2hlZXRzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/FeeSheets/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlU2hlZXRzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/FeeSheets/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlU2hlZXRzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/FeeSheets/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlU2hlZXRzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/FeeSheets/_Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlU2hlZXRzXF9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/FeeStructures/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlU3RydWN0dXJlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/FeeStructures/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlU3RydWN0dXJlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/FeeStructures/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlU3RydWN0dXJlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/FeeStructures/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlU3RydWN0dXJlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/FeeStructures/_Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlU3RydWN0dXJlc1xfQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/FeeStructures/_StructureList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmVlU3RydWN0dXJlc1xfU3RydWN0dXJlTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/ProgramInfoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZ3JhbUluZm9lc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/ProgramInfoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZ3JhbUluZm9lc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/ProgramInfoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZ3JhbUluZm9lc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/ProgramInfoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZ3JhbUluZm9lc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/ProgramInfoes/_Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZ3JhbUluZm9lc1xfQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/ReceiptDetails/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdERldGFpbHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/ReceiptDetails/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdERldGFpbHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/ReceiptDetails/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdERldGFpbHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/ReceiptDetails/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdERldGFpbHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/ReceiptDetails/_Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdERldGFpbHNcX0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/ReceiptPrints/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdFByaW50c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/ReceiptPrints/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdFByaW50c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/ReceiptPrints/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdFByaW50c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/ReceiptPrints/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdFByaW50c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/ReceiptPrints/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdFByaW50c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Receipts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Receipts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Receipts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Receipts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Receipts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Receptions/CancelList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZXB0aW9uc1xDYW5jZWxMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Receptions/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZXB0aW9uc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Receptions/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZXB0aW9uc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Receptions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZXB0aW9uc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Receptions/_Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZXB0aW9uc1xfQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Receptions/_Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZXB0aW9uc1xfRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Students/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Students/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Students/_Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcX0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Students/_Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcX0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Students/_StudentList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudHNcX1N0dWRlbnRMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UploadFiles/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkRmlsZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UploadFiles/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkRmlsZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UploadFiles/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkRmlsZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UploadFiles/_Citizenship.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkRmlsZXNcX0NpdGl6ZW5zaGlwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UploadFiles/_Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkRmlsZXNcX0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UploadFiles/_Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkRmlsZXNcX0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UploadFiles/_GetProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkRmlsZXNcX0dldFByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UploadFiles/_OtherTraining.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkRmlsZXNcX090aGVyVHJhaW5pbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UploadFiles/_PlushTwo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkRmlsZXNcX1BsdXNoVHdvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UploadFiles/_Slccerti.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXBsb2FkRmlsZXNcX1NsY2NlcnRpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UserLists/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxpc3RzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UserLists/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxpc3RzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UserLists/OldPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxpc3RzXE9sZFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UserLists/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxpc3RzXFByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UserLists/_ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxpc3RzXF9DaGFuZ2VQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UserLists/_Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxpc3RzXF9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UserLists/_Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxpc3RzXF9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/UserLists/_UserList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckxpc3RzXF9Vc2VyTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

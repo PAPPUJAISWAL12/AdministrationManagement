@@ -1,0 +1,83 @@
+﻿@model IEnumerable<FeemanagementSystem.Models.Reception>
+
+@{
+    ViewData["Title"] = "CancelList";
+}
+<div class="row">
+    <div class="col-sm-12 ">
+        <div class="card m-3 p-2">
+            <div>
+                <h3>Cancelled List</h3>
+                <hr />
+            </div>
+            <div class="card-body">
+                <div>
+                    <a asp-action="Create" class="btn btn-dark" data-ajax="true" data-ajax-method="get" data-ajax-complete="GetCreatePage" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus" style="color: #f6f7f9;"></i></a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered mt-3" align="center" id="data">
+                        <thead>
+                            <tr>
+                                <th>S.N.</th>
+                                <th>PersonName</th>
+                                <th>EntryDate</th>
+                                <th>EntryTime</th>
+                                <th>Purpose</th>
+                                <th>PersonAddress</th>
+                                <th>Phone</th>
+                                <th>FiscalYear</th>
+                                <th>CancelUser</th>
+                               <th>Reason</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Content">
+
+                            @{
+                                int count = 0;
+                            }
+                            @foreach (var item in Model)
+                            {
+                                if (item.CancelledUserId != null)
+                                {
+                                    <tr>
+                                        <td>@(++count)</td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PersonName)
+                                        </td>
+                                        <td>
+                                            @item.EntryDate.ToShortDateString()
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.EntryTime)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Purpose)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PersonAddress)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Phone)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.FiscalYear)
+                                        </td>
+                                        <td>@item.CancelledUserId</td>
+                                       <td>@item.ResonForCancell</td>
+                                        
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#data").DataTable();
+    });
+</script>

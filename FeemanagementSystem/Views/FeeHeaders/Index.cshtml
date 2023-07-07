@@ -1,0 +1,64 @@
+﻿@model IEnumerable<FeemanagementSystem.Models.FeeHeader>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-sm-12 ">
+        <div class="card m-3 p-2">
+            <div>
+                <h3>FeeHeader List</h3>
+                <hr />
+            </div>
+            <div class="card-body">
+                <div>
+                    <a asp-action="Create" class="btn btn-dark" data-ajax="true" data-ajax-method="get" data-ajax-complete="GetCreatePage" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus" style="color: #f6f7f9;"></i></a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered mt-3" align="center" id="data">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Title)
+                                </th>
+                                <th></th>
+                           
+                            </tr>
+                        </thead>
+                        <tbody id="Content">
+
+                            @{
+                                int count = 0;
+                            }
+                            @foreach (var item in Model)
+                            {
+                                @if (item.CancelledUserId == null)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Title)
+                                        </td>
+                                       
+                                       
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.Fid">Edit</a> |
+                                            <a asp-action="Details" asp-route-id="@item.Fid">Details</a> |
+                                            <a asp-action="Delete" asp-route-id="@item.Fid">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#data").DataTable();
+    });
+</script>

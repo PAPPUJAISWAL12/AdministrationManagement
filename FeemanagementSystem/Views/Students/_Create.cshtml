@@ -1,0 +1,61 @@
+﻿@model FeemanagementSystem.Models.StudentEdit
+
+
+<form asp-action="Create" method="post" asp-controller="Students" data-ajax="true" data-ajax-method="post" data-ajax-complete="StudentPostConfirmation">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Add New Student</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                   
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Cid"  class="control-label">Class</label>
+                                <select asp-for="Cid" class="form-control " asp-items="@ViewBag.ClassList"></select>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Bid" class="control-label">Bus Address:</label>
+                                <select asp-for="Bid" class="form-control " asp-items="@ViewBag.BusList"></select>
+                            </div>
+                   
+                            <div class="form-group">
+                                <label asp-for="RollNo" class="control-label"></label>
+                                <input asp-for="RollNo" class="form-control myinput" />
+                                <span asp-validation-for="RollNo" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control myinput" />
+                                <span asp-validation-for="FullName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="UserAddress" class="control-label"></label>
+                <input asp-for="UserAddress" class="form-control myinput" />
+                                <span asp-validation-for="UserAddress" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="UserEmail" class="control-label"></label>
+                <input asp-for="UserEmail" class="form-control myinput" />
+                                <span asp-validation-for="UserEmail" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Upassword" class="control-label"></label>
+                <input asp-for="Upassword" class="form-control myinput" />
+                                <span asp-validation-for="Upassword" class="text-danger"></span>
+                            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control myinput" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <input type="submit" value="Create" class="btn btn-primary"  />
+                </div>
+            </div>
+      
+   </form>
+

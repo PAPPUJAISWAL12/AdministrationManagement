@@ -1,0 +1,73 @@
+﻿@model IEnumerable<FeemanagementSystem.Models.BusInfo>
+
+@{
+    ViewData["Title"] = "Bus";
+}
+<div class="row">
+    <div class="col-sm-12 ">
+        <div class="card m-3 p-2">
+            <div>
+                <h3>Bus Information List</h3>
+                <hr />
+            </div>
+            <div class="card-body">
+                <div>
+                    
+                    <a asp-action="Create" class="btn btn-dark" data-ajax="true" data-ajax-method="get" data-ajax-complete="GetCreatePage" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus" style="color: #f6f7f9;"></i></a>
+                </div>
+                <div class="table-overflow">
+                    <table class="table table-bordered mt-3" align="center">
+                        <thead>
+                            <tr>
+                                <th>S.N</th>
+                                <th>Destination Address</th>
+                                <th>Bus Fee</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="Content">
+
+                            @{
+                                int count = 0;
+                            }
+                            @foreach (var r in Model)
+                            {
+                                <tr>
+                                    <td>@(++count)</td>
+                                    <td>@r.DestinationAddress</td>
+                                    <td>@r.BusFee</td>
+                                    <th>
+                                        <div class="d-flex">
+                                        <a asp-action="Edit" asp-route-id="@r.Bid" class="m-1" data-ajax="true" data-ajax-method="get" data-ajax-complete="GetEditPage" data-bs-toggle="modal" data-bs-target="#EditPage"><i class="fa-solid fa-pen-to-square" style="color: #266de8;"></i></a>
+                                        @*data-ajax="true" data-ajax-method="post" data-ajax-confirm="Are you sure You want to delete this?" data-ajax-complete="postDelete"*@
+                                            <form asp-action="Delete"  >
+                                                <a> <button asp-action="Delete" asp-controller="BusInfoes" type="submit" class="btn" asp-route-id="@r.Bid"><i class="fa-solid fa-trash" style="color: #f82a1b;"></i></button></a>
+                                            </form>
+                                        </div>
+                                    </th>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="c"></div>
+
+
+<script>
+    postDelete = function (xhr) {
+        document.getElementById('c').innerHTML = xhr.responseText;
+        
+    }
+    PostCreate=function(xhr){
+        alert("Bus Information Save Successfully");
+        location.reload();
+    }
+
+    $(document).ready(function () {
+        $("#data").DataTable();
+    });
+</script>
