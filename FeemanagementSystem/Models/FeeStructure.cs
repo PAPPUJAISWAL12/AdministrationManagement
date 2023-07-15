@@ -32,5 +32,4 @@ public partial class FeeStructure
     public virtual UserList EntryUser { get; set; } = null!;
 
     public virtual FeeHeader? FidNavigation { get; set; }
-    public  List<FeeHeader> feeHeaders = new List<FeeHeader>();
 }

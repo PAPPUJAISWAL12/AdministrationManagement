@@ -8,13 +8,13 @@
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Add New FeeHeader:</h5>
+            <h5 class="modal-title" id="staticBackdropLabel">Add New FeeStructure:</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <div class="form-group">
-                <label asp-for="Cid" class="control-label"></label>
-                <select asp-for="Cid" class="form-control" asp-items="ViewBag.Cid"></select>
+                
+                <input asp-for="Cid"hidden class="form-control" />
             </div>
             <div class="form-group">
                 <label asp-for="Fid">Fee Tittle:</label>

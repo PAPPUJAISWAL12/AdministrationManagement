@@ -11,6 +11,8 @@ public partial class UploadFileView
 
     public int DocId { get; set; }
 
+    public int UserId { get; set; }
+
     public int TypeId { get; set; }
 
     public string? DocFile { get; set; }
@@ -28,7 +30,5 @@ public partial class UploadFileView
 
     public string Phone { get; set; } = null!;
 
-    public int UserId { get; set; }
-
-	public string UserEmail { get; set; } = null!;
+    public string UserEmail { get; set; } = null!;
 }

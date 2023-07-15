@@ -18,19 +18,6 @@ UserRoleType Nvarchar(30) not null
 );
 
 Insert into UserList(UserEmail,UPassword,FullName,Phone,UserAddress,UserRoleType) Values('Jaiswalpappu@gmail.com','pappu@123','Pappu Jaiswal','9815310274','Itahari','Admin')
-/*
-Create table RoleList(
-RoleId int primary key identity(1,1)  not null,
-RoleName nvarchar(20) not null
-);
-create table UserRole(
-UserRoleId int primary key identity(1,1) not null,
-UserId int Not Null foreign key references Users(UserId),
-RoleId int Not Null foreign key references RoleList(RoleId)
-);*/
-/*create View UserRoleView as
-select UserId,RoleId,RoleName,UserEmail,(case when ( select UserRoleId from UserRole where Userid=Users.UserId and RoleId=Rolelist.RoleId) is null then 0 else 1 end)as HasRole from RoleList cross join Users
-*/
 
 create table DocumentType(
 TypeId int primary key identity(1,1) Not null,
@@ -123,9 +110,12 @@ Create table Teacher(
  ReasonForCancelled Nvarchar(max) null ,
  FeeSheetStatus Nvarchar(1000) null
  );
- 
+
+
+
+ Drop View FeeSheetView
 /* create View FeeSheetView as
- select SheetId,FeeSheet.StdId,FeeSheet.FId,Title,DestinationAddress,BusFee,FullName,Cname,Amount,DueDate,FeeSheet.EntryUserId,(select FullName from UserList where UserId=FeeSheet.EntryUserId)as EntryBy,FeeSheet.EntryTime,FeeSheet.CancelledDate,FeeSheet.CancelledUserId,
+ select SheetId,FeeSheet.StdId,FeeSheet.FId,Title,DestinationAddress,BusFee,FullName,Cname,Cid,Amount,DueDate,FeeSheet.EntryUserId,(select FullName from UserList where UserId=FeeSheet.EntryUserId)as EntryBy,FeeSheet.EntryTime,FeeSheet.CancelledDate,FeeSheet.CancelledUserId,
  (select FullName from UserList where UserId=FeeSheet.CancelledUserId) as CancelledBy,
  FeeSheet.ReasonForCancelled,FeeSheetStatus from FeeSheet join FeeHeaderView on FeeSheet.FId=FeeHeaderView.FId join StudentView on FeeSheet.StdId=StudentView.StdId
  */
@@ -142,9 +132,12 @@ Create table Teacher(
 	CancelledUserId int null foreign key references UserList(UserId),
 	ReasonForCancelled Nvarchar(max) null 
 );
+select * from Receipt
+insert into Receipt(ReceiptDate,StdId,ReceiptTime,TotalAmount,Discount,EntryUserId) Values('2023/7/14',17,'7:19Am','3000','1000',22)
+--drop table Receipt
+--drop View ReceiptView
 /*Create View ReceiptView as
-select RId,ReceiptDate,Receipt.StdId,DestinationAddress,BusFee,FullName,UserAddress,Phone,UserEmail,Cname,Cid,ReceiptTime,TotalAmount,Discount,EntryUserId,(select FullName from UserList where UserId=Receipt.EntryUserId)as EntryBy,CancelledUserId,(select FullName from UserList where UserId=Receipt.CancelledUserId)as CancelledBy,CancelledDate,ReasonForCancelled from Receipt join 
-StudentView on Receipt.StdId=StudentView.StdId*/
+select RId,ReceiptDate,Receipt.StdId,DestinationAddress,BusFee,FullName,UserAddress,Phone,UserEmail,Cname,Cid,ReceiptTime,TotalAmount,Discount,EntryUserId,(select FullName from UserList where UserId=Receipt.EntryUserId)as EntryBy,CancelledUserId,(select FullName from UserList where UserId=Receipt.CancelledUserId)as CancelledBy,CancelledDate,ReasonForCancelled from Receipt join StudentView on Receipt.StdId=StudentView.StdId*/
 
  create Table ReceiptDetail(
    DetailId int primary key identity(1,1),
@@ -152,11 +145,10 @@ StudentView on Receipt.StdId=StudentView.StdId*/
    SheetId int foreign key references FeeSheet(SheetId),
    Amount decimal(18,2) not null
  );
-
-
- select DetailId,ReceiptDetail.RId,ReceiptDetail.SheetId,Amount from ReceiptDetail join FeeSheetView 
- on ReceiptDetail.SheetId=FeeSheetView.SheetId 
-
+ --insert into ReceiptDetail (RId,SheetId,Amount) Values(5,1,'2000')
+ create View ReceiptDetailView as
+ select FeeSheetView.Title,FeeSheetView.Cname,FeeSheetView.EntryUserId as sheetEntryUserId, FeeSheetView.EntryBy as sheetEntryUser,FeeSheetView.Cid,FeeSheetStatus,FeeSheetView.CancelledDate as SheetCanceledDate,FeeSheetView.FullName,FeeSheetView.StdId,FeeSheetView.SheetId,FeeSheetView.BusFee,FeeSheetView.Amount,FeeSheetView.CancelledUserId as feesheetcancelled,FeeSheetView.CancelledBy as FeeSheetCancelledUser,FeeSheetView.DestinationAddress,DetailId,ReceiptDetail.RId,ReceiptDetail.SheetId as ReceiptFeeSheetId,Discount,TotalAmount,ReceiptTime,ReceiptView.EntryBy
+as ReceiptEntryUser,(select COUNT(*) from ReceiptPrint where RId=ReceiptView.RId)as PrintCount, ReceiptDate,ReceiptView.CancelledBy,ReceiptView.ReasonForCancelled,ReceiptView.CancelledDate,ReceiptView.CancelledUserId from FeeSheetView left Join ReceiptDetail on ReceiptDetail.SheetId=FeeSheetView.SheetId left Join ReceiptView on ReceiptDetail.RId=ReceiptView.RId
 
  create table ReceiptPrint(
  PrintId int primary key identity(1,1),
@@ -166,6 +158,11 @@ StudentView on Receipt.StdId=StudentView.StdId*/
  PrintUserId int not null foreign key references UserList(UserId)
  );
  
+
+
+ --drop table ReceiptPrint
+
+
  Create table Reception (
  RId int primary key  identity (1,1) not null,
  PersonName nvarchar(50) not null,

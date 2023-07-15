@@ -15,8 +15,9 @@
             <th>
                EntryTime
             </th>
+            <th>Class</th>
             <th>Entry By</th>
-            <th></th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -38,14 +39,14 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.EntryTime)
                 </td>
+                <td>@item.Cid</td>
                 <td>
                     @item.EntryBy
                 </td>
 
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.FsId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.FsId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.FsId">Delete</a>
+                    <a asp-action="Create" asp-controller="FeeSheets" asp-route-id="@item.Cid" asp-route-param="@item.Fid" asp-route-ammount="@item.Amount" class="btn btn-dark" data-ajax="true" data-ajax-method="get" data-ajax-complete="GetCreatePage" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Apply</a>
                 </td>
             </tr>
         }

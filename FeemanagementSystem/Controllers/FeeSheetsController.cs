@@ -21,8 +21,8 @@ namespace FeemanagementSystem.Controllers
         // GET: FeeSheets
         public async Task<IActionResult> Index()
         {
-            var feeManagementSystemContext = _context.FeeSheets.Include(f => f.CancelledUser).Include(f => f.EntryUser).Include(f => f.FidNavigation).Include(f => f.Std);
-            return View(await feeManagementSystemContext.ToListAsync());
+            var sheetList = await _context.FeeSheetViews.ToListAsync();
+            return View(sheetList);
         }
 
         // GET: FeeSheets/Details/5
@@ -48,13 +48,20 @@ namespace FeemanagementSystem.Controllers
         }
 
         // GET: FeeSheets/Create
-        public IActionResult Create()
+        public IActionResult Create(int id, int param, decimal ammount)
         {
-            ViewData["CancelledUserId"] = new SelectList(_context.UserLists, "UserId", "UserId");
-            ViewData["EntryUserId"] = new SelectList(_context.UserLists, "UserId", "UserId");
-            ViewData["Fid"] = new SelectList(_context.FeeHeaders, "Fid", "Fid");
-            ViewData["StdId"] = new SelectList(_context.StudentViews, "StdId", nameof(StudentView.FullName));
-            return PartialView("_Create");
+            var studentList = _context.StudentViews.Where(x => x.Cid == id).ToList();
+           
+            ViewBag.stdlist = new SelectList(studentList,nameof(StudentView.StdId),nameof(StudentView.FullName));
+            
+
+            FeeSheet? sheet = new FeeSheet
+            {
+                Fid=param,
+                Amount=ammount,
+
+            };
+           return PartialView("_Create",sheet);
         }
 
         // POST: FeeSheets/Create
@@ -64,6 +71,9 @@ namespace FeemanagementSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("SheetId,StdId,Fid,Amount,DueDate,EntryUserId,EntryTime,CancelledDate,CancelledUserId,ReasonForCancelled,FeeSheetStatus")] FeeSheet feeSheet)
         {
+            feeSheet.EntryUserId = Convert.ToInt32(User.Identity.Name);
+            feeSheet.DueDate = DateTime.Today;
+            feeSheet.EntryTime = DateTime.Now.ToShortTimeString();
                 _context.Add(feeSheet);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));          

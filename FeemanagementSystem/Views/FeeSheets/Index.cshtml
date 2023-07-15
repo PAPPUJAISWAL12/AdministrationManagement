@@ -1,4 +1,4 @@
-﻿@model IEnumerable<FeemanagementSystem.Models.FeeSheet>
+﻿@model IEnumerable<FeemanagementSystem.Models.FeeSheetView>
 
 @{
     ViewData["Title"] = "Index";
@@ -18,6 +18,8 @@
                     <table class="table table-bordered mt-3" align="center" id="data">
                         <thead>
                             <tr>
+                                <th></th>
+                                <th>Student Name</th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Amount)
                                 </th>
@@ -27,28 +29,12 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.EntryTime)
                                 </th>
+                               
                                 <th>
-                                    @Html.DisplayNameFor(model => model.CancelledDate)
+                                    EntryBy
                                 </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.ReasonForCancelled)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.FeeSheetStatus)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.CancelledUser)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.EntryUser)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.FidNavigation)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Std)
-                                </th>
-                                <th></th>
+                               
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody id="Content">
@@ -59,6 +45,8 @@
                             @foreach (var item in Model)
                             {
                                 <tr>
+                                    <td>@(++count)</td>
+                                    <td>@item.FullName</td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Amount)
                                     </td>
@@ -68,27 +56,8 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.EntryTime)
                                     </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.CancelledDate)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.ReasonForCancelled)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.FeeSheetStatus)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.CancelledUser.UserId)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.EntryUser.UserId)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.FidNavigation.Fid)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Std.StdId)
-                                    </td>
+                                  <td>@item.EntryBy</td>
+                                   
                                     <td>
                                         <a asp-action="Edit" asp-route-id="@item.SheetId">Edit</a> |
                                         <a asp-action="Details" asp-route-id="@item.SheetId">Details</a> |

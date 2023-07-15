@@ -18,11 +18,20 @@ namespace FeemanagementSystem.Controllers
             _context = context;
         }
 
-        // GET: Receipts
+
         public async Task<IActionResult> Index()
         {
-            var feeManagementSystemContext = _context.Receipts.Include(r => r.CancelledUser).Include(r => r.EntryUser).Include(r => r.Std);
-            return View(await feeManagementSystemContext.ToListAsync());
+            List<Class> classList = await _context.Classes.ToListAsync();
+            ViewData["classList"] = new SelectList(classList,nameof(Class.Cid),nameof(Class.Cname));
+            return View();
+        }
+
+
+        // GET: Receipts
+        public async Task<IActionResult> ReceiptList()
+        {
+            List<ReceiptDetailView> receiptlist = await _context.ReceiptDetailViews.ToListAsync();
+            return PartialView(receiptlist);
         }
 
         // GET: Receipts/Details/5

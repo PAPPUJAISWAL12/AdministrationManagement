@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace FeemanagementSystem.Models;
 
@@ -9,8 +8,7 @@ public partial class UserList
     public int UserId { get; set; }
 
     public string UserEmail { get; set; } = null!;
-    
-    [DataType(DataType.Password)]
+
     public string Upassword { get; set; } = null!;
 
     public string FullName { get; set; } = null!;

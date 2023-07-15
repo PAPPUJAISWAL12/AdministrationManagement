@@ -20,11 +20,11 @@
 
                         <div class="form-group ">
                             <input type="submit" id="btn-submit" value="Search" hidden class="btn btn-primary" />
-
+                         
                         </div>
 
                         <div class="m-2">                             
-                            <a asp-action="Create" asp-controller="FeeStructures" asp-route-id=""  class="btn btn-dark" data-ajax="false" data-ajax-method="get" data-ajax-complete="GetCreatePage" data-bs-toggle="moda" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus" style="color: #f6f7f9;"></i></a>
+                            <a asp-action="Create" asp-controller="FeeStructures" asp-route-id="" id="myLink" class="btn btn-dark" data-ajax="true" data-ajax-method="get" data-ajax-complete="GetCreatePage" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus" style="color: #f6f7f9;"></i></a>
                         </div>
                       
 
@@ -56,24 +56,15 @@
 
 <script>
     $(document).ready(function () {
-        $("#btn-submit").click();     
-        var value = $('#mydrp').val();
-        var param=$('.btn-dark');
-        console.log(param);
-         param.attr('asp-route-id',value);
-        console.log(param);
-        console.log(value);
+        $("#btn-submit").click();
+        var selectedValue = $('#mydrp').val();
+        $('#myLink').attr('href', '/FeeStructures/Create/' + selectedValue);
 
         $("#mydrp").on('change',()=>{
             $("#btn-submit").click();
-            var value = $('#mydrp').val();
-            var param = $('.btn-dark');
-            
-            console.log(value);
-
-            console.log(param);
-            param.attr('asp-route-id', value);
-            console.log(param);
+            var selectedValue = $('#mydrp').val();
+           
+            $('#myLink').attr('href', '/FeeStructures/Create/' + selectedValue);
         });
 
       

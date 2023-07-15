@@ -45,6 +45,8 @@ public partial class FeeManagementSystemContext : DbContext
 
     public virtual DbSet<ReceiptDetail> ReceiptDetails { get; set; }
 
+    public virtual DbSet<ReceiptDetailView> ReceiptDetailViews { get; set; }
+
     public virtual DbSet<ReceiptPrint> ReceiptPrints { get; set; }
 
     public virtual DbSet<ReceiptView> ReceiptViews { get; set; }
@@ -76,7 +78,7 @@ public partial class FeeManagementSystemContext : DbContext
 
             entity.Property(e => e.Bid).HasColumnName("BId");
             entity.Property(e => e.BusFee).HasColumnType("decimal(18, 2)");
-            entity.Property(e => e.DestinationAddress).HasMaxLength(1);
+            entity.Property(e => e.DestinationAddress).HasMaxLength(40);
         });
 
         modelBuilder.Entity<Class>(entity =>
@@ -201,7 +203,7 @@ public partial class FeeManagementSystemContext : DbContext
             entity.Property(e => e.CancelledBy).HasMaxLength(20);
             entity.Property(e => e.CancelledDate).HasColumnType("date");
             entity.Property(e => e.Cname).HasMaxLength(20);
-            entity.Property(e => e.DestinationAddress).HasMaxLength(1);
+            entity.Property(e => e.DestinationAddress).HasMaxLength(40);
             entity.Property(e => e.DueDate).HasColumnType("date");
             entity.Property(e => e.EntryBy).HasMaxLength(20);
             entity.Property(e => e.EntryTime).HasMaxLength(20);
@@ -310,7 +312,7 @@ public partial class FeeManagementSystemContext : DbContext
 
         modelBuilder.Entity<Receipt>(entity =>
         {
-            entity.HasKey(e => e.Rid).HasName("PK__Receipt__CAFF40D2FED50BE1");
+            entity.HasKey(e => e.Rid).HasName("PK__Receipt__CAFF40D2843AEB27");
 
             entity.ToTable("Receipt");
 
@@ -323,21 +325,21 @@ public partial class FeeManagementSystemContext : DbContext
 
             entity.HasOne(d => d.CancelledUser).WithMany(p => p.ReceiptCancelledUsers)
                 .HasForeignKey(d => d.CancelledUserId)
-                .HasConstraintName("FK__Receipt__Cancell__72C60C4A");
+                .HasConstraintName("FK__Receipt__Cancell__7849DB76");
 
             entity.HasOne(d => d.EntryUser).WithMany(p => p.ReceiptEntryUsers)
                 .HasForeignKey(d => d.EntryUserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Receipt__EntryUs__71D1E811");
+                .HasConstraintName("FK__Receipt__EntryUs__7755B73D");
 
             entity.HasOne(d => d.Std).WithMany(p => p.ReceiptStds)
                 .HasForeignKey(d => d.StdId)
-                .HasConstraintName("FK__Receipt__StdId__70DDC3D8");
+                .HasConstraintName("FK__Receipt__StdId__76619304");
         });
 
         modelBuilder.Entity<ReceiptDetail>(entity =>
         {
-            entity.HasKey(e => e.DetailId).HasName("PK__ReceiptD__135C316DA52E0F7E");
+            entity.HasKey(e => e.DetailId).HasName("PK__ReceiptD__135C316D98C56259");
 
             entity.ToTable("ReceiptDetail");
 
@@ -346,16 +348,46 @@ public partial class FeeManagementSystemContext : DbContext
 
             entity.HasOne(d => d.RidNavigation).WithMany(p => p.ReceiptDetails)
                 .HasForeignKey(d => d.Rid)
-                .HasConstraintName("FK__ReceiptDeta__RId__75A278F5");
+                .HasConstraintName("FK__ReceiptDeta__RId__7C1A6C5A");
 
             entity.HasOne(d => d.Sheet).WithMany(p => p.ReceiptDetails)
                 .HasForeignKey(d => d.SheetId)
-                .HasConstraintName("FK__ReceiptDe__Sheet__76969D2E");
+                .HasConstraintName("FK__ReceiptDe__Sheet__7D0E9093");
+        });
+
+        modelBuilder.Entity<ReceiptDetailView>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToView("ReceiptDetailView");
+
+            entity.Property(e => e.Amount).HasColumnType("decimal(18, 2)");
+            entity.Property(e => e.BusFee).HasColumnType("decimal(18, 2)");
+            entity.Property(e => e.CancelledBy).HasMaxLength(20);
+            entity.Property(e => e.CancelledDate).HasColumnType("date");
+            entity.Property(e => e.Cname).HasMaxLength(20);
+            entity.Property(e => e.DestinationAddress).HasMaxLength(40);
+            entity.Property(e => e.Discount).HasColumnType("decimal(18, 2)");
+            entity.Property(e => e.FeeSheetCancelledUser).HasMaxLength(20);
+            entity.Property(e => e.FeeSheetStatus).HasMaxLength(1000);
+            entity.Property(e => e.Feesheetcancelled).HasColumnName("feesheetcancelled");
+            entity.Property(e => e.FullName).HasMaxLength(20);
+            entity.Property(e => e.ReceiptDate).HasColumnType("date");
+            entity.Property(e => e.ReceiptEntryUser).HasMaxLength(20);
+            entity.Property(e => e.ReceiptTime).HasMaxLength(20);
+            entity.Property(e => e.Rid).HasColumnName("RId");
+            entity.Property(e => e.SheetCanceledDate).HasColumnType("date");
+            entity.Property(e => e.SheetEntryUser)
+                .HasMaxLength(20)
+                .HasColumnName("sheetEntryUser");
+            entity.Property(e => e.SheetEntryUserId).HasColumnName("sheetEntryUserId");
+            entity.Property(e => e.Title).HasMaxLength(100);
+            entity.Property(e => e.TotalAmount).HasColumnType("decimal(18, 2)");
         });
 
         modelBuilder.Entity<ReceiptPrint>(entity =>
         {
-            entity.HasKey(e => e.PrintId).HasName("PK__ReceiptP__26C7BA7DB610C170");
+            entity.HasKey(e => e.PrintId).HasName("PK__ReceiptP__26C7BA7D9D53A1EA");
 
             entity.ToTable("ReceiptPrint");
 
@@ -366,11 +398,11 @@ public partial class FeeManagementSystemContext : DbContext
             entity.HasOne(d => d.PrintUser).WithMany(p => p.ReceiptPrints)
                 .HasForeignKey(d => d.PrintUserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__ReceiptPr__Print__3D2915A8");
+                .HasConstraintName("FK__ReceiptPr__Print__00DF2177");
 
             entity.HasOne(d => d.RidNavigation).WithMany(p => p.ReceiptPrints)
                 .HasForeignKey(d => d.Rid)
-                .HasConstraintName("FK__ReceiptPrin__RId__3C34F16F");
+                .HasConstraintName("FK__ReceiptPrin__RId__7FEAFD3E");
         });
 
         modelBuilder.Entity<ReceiptView>(entity =>
@@ -383,7 +415,7 @@ public partial class FeeManagementSystemContext : DbContext
             entity.Property(e => e.CancelledBy).HasMaxLength(20);
             entity.Property(e => e.CancelledDate).HasColumnType("date");
             entity.Property(e => e.Cname).HasMaxLength(20);
-            entity.Property(e => e.DestinationAddress).HasMaxLength(1);
+            entity.Property(e => e.DestinationAddress).HasMaxLength(40);
             entity.Property(e => e.Discount).HasColumnType("decimal(18, 2)");
             entity.Property(e => e.EntryBy).HasMaxLength(20);
             entity.Property(e => e.FullName).HasMaxLength(20);
@@ -432,6 +464,7 @@ public partial class FeeManagementSystemContext : DbContext
 
             entity.HasOne(d => d.BidNavigation).WithMany(p => p.Students)
                 .HasForeignKey(d => d.Bid)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK__Student__BId__5AEE82B9");
 
             entity.HasOne(d => d.CidNavigation).WithMany(p => p.Students)

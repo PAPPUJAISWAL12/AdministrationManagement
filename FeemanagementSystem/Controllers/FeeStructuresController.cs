@@ -55,10 +55,13 @@ namespace FeemanagementSystem.Controllers
         // GET: FeeStructures/Create
         public IActionResult Create(int id)
         {
-            return Json(id);
-            ViewData["Cid"] = new SelectList(_context.Classes, "Cid", nameof(Class.Cname));
+          
             ViewBag.feeHeader = new SelectList(_context.FeeHeaders, "Fid", nameof(FeeHeader.Title));
-            return PartialView("_Create");
+            FeeStructure feeStructures = new FeeStructure()
+            {
+                Cid = id
+            };
+            return PartialView("_Create",feeStructures);
         }
 
         // POST: FeeStructures/Create

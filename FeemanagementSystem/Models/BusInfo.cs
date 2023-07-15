@@ -7,7 +7,7 @@ public partial class BusInfo
 {
     public int Bid { get; set; }
 
-    public string DestinationAddress { get; set; } = null!;
+    public string? DestinationAddress { get; set; }
 
     public decimal BusFee { get; set; }
 

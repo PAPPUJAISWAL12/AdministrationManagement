@@ -18,10 +18,14 @@ namespace FeemanagementSystem.Controllers
 		[HttpGet]
 		public IActionResult Index()
 		{
-			
+			if (User.Identity.IsAuthenticated)
+			{
+				return RedirectToAction("Index","Accounts");
+			}
+			else
+			{
 				return View();
-			
-			
+			}
 		}
 
 		[HttpPost]
@@ -41,12 +45,14 @@ namespace FeemanagementSystem.Controllers
 				};
 				
 				var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-				await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
-				return Content("Success");
+				await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity),new AuthenticationProperties { IsPersistent=true});
+				return RedirectToAction("Index", "Accounts");
 			}
 			else
 			{
-				return Content("failled");
+				
+				ViewData["ErrorMessage"] = "Login Failled. Try Again!";
+				return View(new UserList());
 				//ViewBag.ErrorMessage = "Login Failled. Try Again!";
 			}
 			

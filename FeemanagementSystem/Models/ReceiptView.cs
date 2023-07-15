@@ -11,7 +11,7 @@ public partial class ReceiptView
 
     public int? StdId { get; set; }
 
-    public string DestinationAddress { get; set; } = null!;
+    public string? DestinationAddress { get; set; }
 
     public decimal BusFee { get; set; }
 

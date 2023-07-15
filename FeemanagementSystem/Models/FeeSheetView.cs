@@ -13,13 +13,15 @@ public partial class FeeSheetView
 
     public string Title { get; set; } = null!;
 
-    public string DestinationAddress { get; set; } = null!;
+    public string? DestinationAddress { get; set; }
 
     public decimal BusFee { get; set; }
 
     public string FullName { get; set; } = null!;
 
     public string Cname { get; set; } = null!;
+
+    public int Cid { get; set; }
 
     public decimal Amount { get; set; }
 
