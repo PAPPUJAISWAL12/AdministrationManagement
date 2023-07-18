@@ -1,0 +1,75 @@
+﻿@model FeemanagementSystem.Models.Receipt
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Pay Fee</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+
+            @*<div class="form-group">
+            <label asp-for="ReceiptDate" class="control-label"></label>
+            <input asp-for="ReceiptDate" class="form-control" />
+            <span asp-validation-for="ReceiptDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label asp-for="StdId" class="control-label"></label>
+            <select asp-for="StdId" class ="form-control" asp-items="ViewBag.StdId"></select>
+            </div>
+            <div class="form-group">
+            <label asp-for="ReceiptTime" class="control-label"></label>
+            <input asp-for="ReceiptTime" class="form-control" />
+            <span asp-validation-for="ReceiptTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label asp-for="TotalAmount" class="control-label"></label>
+            <input asp-for="TotalAmount" class="form-control" />
+            <span asp-validation-for="TotalAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label asp-for="Discount" class="control-label"></label>
+            <input asp-for="Discount" class="form-control" />
+            <span asp-validation-for="Discount" class="text-danger"></span>
+            </div>
+            *@
+
+            <div>
+                <table class="table table-border">
+                    <thead>
+                        <tr>
+                            <th>S.N</th>
+                            
+                            <th>Fee Title</th>
+                            <th>Amount</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.ReceiptDetails.Count; i++)
+                        {
+                            <tr>
+
+                                <td>@(i+1)<input type="hidden" asp-for="@Model.ReceiptDetails[i].SheetId" /></td>
+                                <td>@Model.ReceiptDetails[i].Sheet.FidNavigation.Title</td>
+                                <td>@Model.ReceiptDetails[i].Sheet.Amount</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <input type="submit" value="Pay" class="btn btn-primary" />
+        </div>
+    </div>
+</form>

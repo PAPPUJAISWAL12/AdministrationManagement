@@ -9,17 +9,29 @@
             <div class="card mt-3">
                 <div class="card-body">
                     @**@
-                    
-                    <form method="get" asp-action="Studentlist" asp-controller="Receipts" data-ajax="true" data-ajax-method="get" data-ajax-complete="stdList">
+                    <a asp-action="Create" class="btn btn-dark" id="create-data" asp-route-id=""data-ajax="true" data-ajax-method="get" data-ajax-complete="GetCreatePage" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus" style="color: #f6f7f9;"></i></a>
+                    <form method="get"  data-ajax="false" data-ajax-method="get" data-ajax-complete="stdList">
                        <div class="d-flex">
                             <div class="m-3 form-group"> <label> Class:</label></div>
                             <div class="form-group m-2 w-50">                               
-                                <select class="form-select" id="mydrp" asp-for="Cid" asp-items="@ViewBag.classList"></select>
-                            </div>                            
-                                <div class="form-group ">
-                                    <input type="submit" id="btn-drp-click" value="Search" hidden class="btn btn-primary" />
-                                </div>                                
+                                <select class="form-select" id="mydrp" asp-for="Cid" asp-items="@ViewBag.classList">
+                                    <option>--Select Class--</option>
+                                </select>
+                            </div>                                
                         </div>                        
+                    </form>
+                    <form method="get" asp-action="ReceiptList" asp-controller="Receipts" data-ajax="true" data-ajax-method="get" data-ajax-complete="receiptList">
+                        <div class="d-flex">
+                            <div class="m-3 form-group"> <label> Students:</label></div>
+                            <div class="form-group m-2 w-50">                                
+                                <select class="form-select" id="std-drp" asp-for="StdId">
+                                   <option>--Select Student--</option>
+                                </select>
+                            </div>
+                            <div class="form-group mt-2">
+                                <input type="submit" id="btn-drp-click" value="Search" class="btn btn-primary" />
+                            </div>
+                        </div>
                     </form>
                    
                 </div>
@@ -27,3 +39,67 @@
         </div>
     </div>
 </div>
+
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-border mt-3">
+                        <thead>
+                            <tr>
+                                <td>S.N</td>
+                                <td>Title</td>
+                                <td>BusFee</td>
+                                <td>Amount</td>
+                                <td>Discount</td>
+                                <td>TotalAmount</td>
+                            </tr>
+                        </thead>
+                        <tbody id="receipt">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    receiptList=function(xhr){
+        document.getElementById('receipt').innerHTML=xhr.responseText;
+    }
+
+    $(document).ready(function(){   
+       
+        $('#btn-drp-click').on('click',function(){
+            var student = $('#std-drp option:selected').val();
+            var url='/Receipts/Create/'+student;
+            $('#create-data').attr('href',url);
+            console.log(student);
+        });
+        $('#mydrp').on('change',function(){
+           
+            var selectedCategory = $(this).val();
+           
+            $.ajax({
+                url: '/Receipts/StudentList',
+                type: 'GET',
+                data: { Cid: selectedCategory },
+                success: function (response) {
+                   
+                    // Clear the current options
+                    $('#std-drp').empty();
+
+                    // Add the new options
+                    $.each(response, function (index, subcategory) {
+                        $('#std-drp').append($('<option id="1"></option>').val(subcategory.value).text(subcategory.text));
+                    });
+                }
+            });
+        });
+    });
+  
+</script>

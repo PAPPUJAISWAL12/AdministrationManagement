@@ -1,0 +1,23 @@
+﻿@model List<FeemanagementSystem.Models.ReceiptDetailView>
+
+@{
+    int count = 0;
+}
+@foreach(var item in Model){
+    <tr>
+        <td>@(++count)</td>
+        <td>@item.Title</td>
+        <td>@item.BusFee</td>
+        <td>@item.Amount</td>
+        @if(item.Discount==null){
+            <td>-</td>
+        }else{
+            <td>@item.Discount</td>
+        }
+        @if(item.TotalAmount==null){
+            <td>-</td>
+        }else{
+            <td>@item.TotalAmount</td>
+        }      
+    </tr>
+}

@@ -26,12 +26,19 @@ namespace FeemanagementSystem.Controllers
             return View();
         }
 
+        public async Task<IActionResult> StudentList(int Cid)
+        {
+            List<StudentView>? stdList=await (_context.StudentViews).Where(x=>x.Cid==Cid).ToListAsync();
+            var stdname = new SelectList(stdList, nameof(StudentView.StdId), nameof(StudentView.FullName));
+            return Json(stdname);
+        }
 
         // GET: Receipts
-        public async Task<IActionResult> ReceiptList()
+        public async Task<IActionResult> ReceiptList(int StdId)
         {
-            List<ReceiptDetailView> receiptlist = await _context.ReceiptDetailViews.ToListAsync();
-            return PartialView(receiptlist);
+            
+            List<ReceiptDetailView> receiptlist = await (_context.ReceiptDetailViews).Where(x=>x.StdId==StdId).ToListAsync();
+            return PartialView("_ReceiptList",receiptlist);
         }
 
         // GET: Receipts/Details/5
@@ -56,12 +63,21 @@ namespace FeemanagementSystem.Controllers
         }
 
         // GET: Receipts/Create
-        public IActionResult Create()
+        public IActionResult Create(int id)
         {
-            ViewData["CancelledUserId"] = new SelectList(_context.UserLists, "UserId", "UserId");
-            ViewData["EntryUserId"] = new SelectList(_context.UserLists, "UserId", "UserId");
-            ViewData["StdId"] = new SelectList(_context.UserLists, "UserId", "UserId");
-            return View();
+            
+            Receipt receipt = new Receipt();
+
+            List<FeeSheetView> sheetList = _context.FeeSheetViews.Where(x=>x.StdId==id).ToList();
+            if (sheetList != null)
+            {
+                foreach(FeeSheetView s in sheetList)
+                {
+                    receipt.ReceiptDetails.Add(new ReceiptDetail { SheetId = s.SheetId, Sheet = new FeeSheet {SheetId=s.SheetId,Amount=s.Amount, FidNavigation=new FeeHeader { Fid=s.Fid,Title=s.Title} } });
+                }
+            }
+            
+            return PartialView("_Create",receipt);
         }
 
         // POST: Receipts/Create

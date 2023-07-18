@@ -199,10 +199,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdFByaW50c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Receipts/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdHNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Receipts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -217,6 +213,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Receipts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Receipts/_Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdHNcX0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Receipts/_ReceiptList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjZWlwdHNcX1JlY2VpcHRMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [H:/visual studio/FeemanagementSystem/FeemanagementSystem/Views/Receptions/CancelList.cshtml]

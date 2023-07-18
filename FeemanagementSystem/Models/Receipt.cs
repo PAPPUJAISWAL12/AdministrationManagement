@@ -29,7 +29,7 @@ public partial class Receipt
 
     public virtual UserList EntryUser { get; set; } = null!;
 
-    public virtual ICollection<ReceiptDetail> ReceiptDetails { get; set; } = new List<ReceiptDetail>();
+    public virtual List<ReceiptDetail> ReceiptDetails { get; set; } = new List<ReceiptDetail>();
 
     public virtual ICollection<ReceiptPrint> ReceiptPrints { get; set; } = new List<ReceiptPrint>();
 
